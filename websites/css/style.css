@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+  background-color: #151320;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; 
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1000px;
+  padding: 20px;
+}
+
+
+.card-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  padding: 20px;
+  gap: 20px;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.card {
+  background-color: aliceblue;
+  border-radius: 20px;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.18);
+  max-width: 1000px;
+  width: 100%;
+  text-align: center;
+  color: black;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+.container {
+  position: relative;
+  
+}
+
+img {
+  width: 100%;
+  display: block;
+  border-radius: 20px 20px 0 0;
+}
+
+.container:after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 20px 20px 0 0;
+  opacity: 0.7;
+}
+
+.container .text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white; 
+  font-size: 18px;
+  font-weight: bold;
+  z-index: 1;
+}
+
+a.card {
+  text-decoration: none;
+  color: inherit;
+}
+
+a.card .see-more {
+  text-decoration: underline;
+  color: inherit; 
+}
+
+.card:hover {
+  transform: translateY(-30px); 
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}

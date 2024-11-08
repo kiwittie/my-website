@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cozy Spot</title>
+
+   
+
+
+    <style>
+
+@font-face {
+            font-family: 'great warrior';
+            src: url('font/Great\ Warrior.ttf') format('opentype'); 
+        }
+
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #0f0b05;
+            background-color: #ffffff;
+            background: url('image/Brown\ Vintage\ Watercolor\ Creative\ Portfolio\ Presentation.png') no-repeat center center fixed; 
+            background-size: cover; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            overlay: rgba(45, 33, 7, 0.541);
+            
+        }
+
+        h1 {
+    font-family: 'Great Warrior', sans-serif;
+    font-size: 5.5em;
+    color: #ffffff;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgb(42, 29, 16); /* Adds a dark shadow */
+}
+
+h2 {
+    font-family: Arial;
+    font-size: 1.2em;
+    color: #faf8f7;
+    margin-bottom: 40px;
+    margin-top: 0.2px;
+    text-align: center;
+    text-shadow: 2px 2px 5px rgba(21, 15, 7, 0.93); /* Adds a dark shadow */
+}
+
+
+
+        .container {
+    width: 90%;
+    max-width: 1200px;
+    background-color: rgba(236, 236, 236, 0.2); /* Semi-transparent white background */
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    overflow: hidden;
+    padding-top: 0px;
+    backdrop-filter: blur(10px); /* Blur effect for glassy appearance */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Light border for a frosty edge */
+}
+
+
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content:left;
+    gap: 20px;
+    padding: 20px;
+    background: rgba(55, 45, 33, 0.5); /* Dark translucent green */
+    backdrop-filter: blur(10px); /* Apply blur for glass-like effect */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2); /* Optional shadow for more depth */
+}
+
+
+        .header .logo {
+            font-size: 1.2em;
+        }
+
+        .header .menu-icon {
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+
+        .card-section {
+            display: flex;
+            overflow-x: auto;
+            padding: 20px;
+            gap: 30px;
+        }
+
+        .card {
+            flex: 0 0 250px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .card .card-content {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .card .title {
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .card .subtitle {
+            font-size: 0.9em;
+            color: #777;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #fff;
+            border-top: 1px solid #ddd;
+        }
+
+        .footer .links {
+            display: flex;
+            gap: 20px;
+            font-size: 0.9em;
+            color: #333;
+        }
+
+        .footer .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .footer .social-icons a {
+            text-decoration: none;
+            color: #333;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Centered Page Header -->
+    <h1> Cozy Spot </h1>
+    <h2>Find your perfect cozy place to relax and unwind.</h2>
+
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="menu-icon">☰</div>
+            <div class="logo">Explore</div>
+            
+        </div>
+
+        <!-- Card Section -->
+        <div class="card-section">
+            <!-- Card 1 -->
+            <div class="card">
+                <a href="/other tabs/bricks_brewslink.html" target="_blank">
+                <img src="image/Untitled-1.png" alt="Bricks and Brews">
+            </a>
+                <div class="card-content">
+                    <div class="title">Bricks and Brews</div>
+                    <div class="subtitle">Old Sta. Mesa</div>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <a href="/other tabs/siriusdan_link.html" target="_blank">
+                <img src="image/siriusdan.jpg" alt="Siriusdan Cafe">
+                <div class="card-content">
+                </a>
+                    <div class="title">Siriusdan Cafe</div>
+                    <div class="subtitle">Mandaluyong City</div>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card">
+                <a href="/other tabs/porch_coffeelink.html" target="_blank">
+                <img src="image/Untitled-3.png" alt="Porch Coffee">
+                <div class="card-content">
+                    </a>
+                    <div class="title">Porch Coffee</div>
+                    <div class="subtitle">Clark Pampanga</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <a href="other tabs/bakehouse_link.html" target="_blank">
+                <img src="image/bake-house-interiors.jpg" alt="Bakehouse Manila">
+                <div class="card-content">
+                    </a>
+                    <div class="title">Bakehouse Manila</div>
+                    <div class="subtitle">Taguig City</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <a href="other tabs/humble_link.html" target="_blank">
+                <img src="image/humble-4_orig.jpg" alt="Our Humble Beginnings">
+                <div class="card-content">
+                </a>
+                    <div class="title">Our Humble Beginnings</div>
+                    <div class="subtitle">Quezon City</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

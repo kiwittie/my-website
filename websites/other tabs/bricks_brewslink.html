@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bricks and Brews</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        /* Body and container */
+        body, html {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #050505;
+            overflow: hidden;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100vh;
+            background-color: #0808088d;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Left image section */
+        .left-section {
+            flex: 1;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            transition: transform 1s ease-in-out;
+        }
+
+        .left-section img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            transition: transform 1s ease-in-out;
+        }
+
+        /* Home button */
+        .home-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 2em;
+            color: #fff;
+            text-shadow: #2f1705;
+            background: none;
+            border: none;
+            cursor: pointer;
+            transition: color 0.3s;
+            z-index: 2; /* Ensure the home button is above the images */
+        }
+
+        .home-btn:hover {
+            color: #f4f2f0;
+        }
+
+        /* Next arrow button (slide image) */
+        .next-arrow {
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            font-size: 4em;
+            text-shadow: #2f1705;
+            color: #f5f1f1;
+            cursor: pointer;
+            z-index: 1; /* Ensure the arrow button is above the images, but below the home button */
+            user-select: none;
+        }
+
+        /* Right content section */
+        .right-section {
+            flex: 1;
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background: rgb(90, 42, 0);
+            background: linear-gradient(to bottom, rgb(90, 42, 0) 70%, rgba(0, 0, 0, 0.8) 100%);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Content Wrapper for Title, Description, and Button */
+        .content-wrapper {
+            text-align: center;
+        }
+
+        .content-wrapper h1 {
+            font-size: 3.5em;
+            color: #fcf8f8;
+            margin-bottom: 30px;
+            text-shadow: 
+                0 0 5px #87430f, 
+                0 0 10px #87430f, 
+                0 0 20px #87430f, 
+                0 0 40px #87430f, 
+                0 0 80px #87430f, 
+                0 0 90px #87430f, 
+                0 0 100px #87430f;
+        }
+
+        .content-wrapper p {
+            font-size: 0.8em;
+            color: #f9f3f3;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        /* Image cards section */
+        .image-cards {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .image-card {
+            flex: 1;
+            max-width: 30%;
+            background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: transform 0.3s;
+            box-shadow: 0 4px 12px rgba(255, 176, 93, 0.627);
+        }
+
+        .image-card img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .image-card:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Left Section with Sliding Background Images -->
+    <div class="left-section" id="left-section">
+        <!-- Home Button placed above the image -->
+        <button class="home-btn" onclick="window.location.href='/website.html';">
+            <i class="fas fa-arrow-left"></i>  <!-- Font Awesome arrow icon -->
+        </button>
+        <img id="current-image" src="/image/brick_brew/pic2.jpg" alt="Image 1">
+        <div class="next-arrow" onclick="nextImage()">&#8250;</div>
+    </div>
+
+    <!-- Right Section with Content -->
+    <div class="right-section">
+        <div class="content-wrapper">
+            <h1>Bricks and Brews</h1>
+            <p>
+                Bricks and Brews is a cozy coffee shop nestled in Old Sta. Mesa, offering a warm and inviting atmosphere perfect for students. With its stylish interior and budget-friendly prices, it's the ideal spot to relax, study, or catch up with friends over a cup of freshly brewed coffee. Whether you're looking for a peaceful place to focus or simply enjoy a casual hangout, Bricks and Brews has you covered.
+            </p>
+        </div>
+
+        <!-- Image Cards -->
+        <div class="image-cards">
+            <div class="image-card">
+                <img src="/image/brick_brew/pic1.jpg" alt="Bricks and Brews">
+            </div>
+            <div class="image-card">
+                <img src="/image/brick_brew/pic5.jpg" alt="Bricks and Brews">
+            </div>
+            <div class="image-card">
+                <img src="/image/brick_brew/pic3.jpg" alt="Bricks and Brews">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    const images = [
+        "/image/brick_brew/pic2.jpg",
+        "/image/brick_brew/pic1.jpg",
+        "/image/brick_brew/pic5.jpg",
+        "/image/brick_brew/pic3.jpg"
+    ];
+
+    let currentIndex = 0;
+    const leftSection = document.getElementById('left-section');
+    const currentImage = document.getElementById('current-image');
+
+    function nextImage() {
+        currentIndex = (currentIndex + 1) % images.length;
+
+        leftSection.style.transform = `translateX(-100%)`;
+
+        setTimeout(() => {
+            currentImage.src = images[currentIndex];
+
+            leftSection.style.transition = 'none';
+            leftSection.style.transform = 'translateX(0)';
+
+            setTimeout(() => {
+                leftSection.style.transition = 'transform 1s ease-in-out';
+            }, 50);
+        }, 1000);
+    }
+</script>
+
+</body>
+</html>
